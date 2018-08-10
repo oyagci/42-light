@@ -1,0 +1,27 @@
+Logo = Image("42Logo.png");
+Sprite = Sprite(Logo);
+
+Sprite.SetX(Window.GetWidth() / 2 - Logo.GetWidth() / 2 - 30);
+Sprite.SetY(Window.GetHeight() / 2 - Logo.GetHeight() / 2);
+Sprite.SetZ(9);
+
+Window.SetBackgroundTopColor(1.0, 1.0, 1.0);
+Window.SetBackgroundBottomColor(1.0, 1.0, 1.0);
+
+Loading = Image("LoadingCircle.png");
+Loading = Loading.Scale(50, 50);
+LoadingSprite = Sprite(Loading);
+
+time = 0;
+fun	refresh_callback()
+{
+	time++;
+	theta = time / 100;
+	theta *= 10;
+	LoadingSprite.SetImage(Loading.Rotate(theta));
+}
+Plymouth.SetRefreshFunction(refresh_callback);
+
+LoadingSprite.SetX(Window.GetWidth() / 2 - Loading.GetWidth() / 2);
+LoadingSprite.SetY(Window.GetHeight() / 2 - Loading.GetHeight() / 2 + 180);
+LoadingSprite.SetZ(10);

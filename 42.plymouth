@@ -1,0 +1,7 @@
+[Plymouth Theme]
+Name=42
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/42
+ScriptFile=/usr/share/plymouth/themes/42/42.script
